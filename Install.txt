@@ -1,0 +1,2 @@
+-First you need to add csvjdbc.jar as an external library
+-To get exploits working/to add new exploits just clone https://github.com/offensive-security/exploitdb and put it under lib/exploitdb 

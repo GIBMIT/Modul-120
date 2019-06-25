@@ -1,0 +1,310 @@
+# PA3 Jannis Kirschner
+
+1.) Erkenntnisse
+Beim ersten Testverfahren wurde mein Konzept von XXXXX als klar aufgebaut definiert und es wurden keine Verbesserungsvorschläge erarbeitet.
+Hierbei hätte man mehr Testcases erstellen müssen um den Tester XXXXX stärker zu pushen.
+Nach einer Zweitbesprechung mit Herrn Moreno wurde vor allem das Filterkonzept als ein wenig unklar definiert.
+Daraus resultierend baue ich das Query "Live" wärend der Nutzer eingaben tätigt und zeige dieses so im Gui an. 
+So ist klar ersichtlich was passiert. Einen "Dark Mode" habe ich aus Zeitgründen nicht umgesetzt.
+
+Ausserdem habe ich für eine schnellere Navigierbarkeit die Buttons bei der Detailansicht nach oben verschoben.
+
+2.) Implementierung
+Meinen Code befindet sich entweder im angehängten Zip-File oder auf Github unter: https://github.com/JannisKirschner/Searchsploit-Gui
+
+
+3.) Dokumentation
+
+User Stories:
+-Der Nutzer möchte Exploits suchen können
+-Der Nutzer möchte Filtern können
+-Die Filter sollten ein- und ausschliessen können
+-Es sollten mehrere Filter gleichzeitig gesetzt werden können
+-Der Nutzer möchte eine Favoritenansicht mit gespeicherten Werten
+-Der Nutzer möchte eine Detailansicht um Exploitdaten anzusehen
+-Der Nutzer möchte per Knopfdruck den Exploit anzeigen können
+-Der Nutzer möchte per Knopfdruck auf die entsprechende Seite in der Exploit-DB gelangen
+
+
+
+Gui:
+
+MainView:
+
+
+ JFrame + GridLayout(1,0)
+
++-------------------------------------------------------------------------------------------------------------------------+
+| +---------------------------------------------------------------------------------------------------------------------+ |
+| |   JPanel + BorderLayout                                     |                                                       | |
+| |                                                 BL.CENTER   |  BL.LINE_END                                          | |
+| | +------------------------------------------+                |                                                       | |
+| | |                                          |                |                                                       | |
+| | |  SuchFeld + FlowLayout.LEFT              |                |                                                       | |
+| | |                                          |                |                                                       | |
+| | +------------------------------------------+                |                                                       | |
+| |                                                             |                                                       | |
+| |                                                             |                                                       | |
+| |                                                             |                                                       | |
+| |                                                             |                                                       | |
+| +---------------------------------------------------------------------------------------------------------------------+ |
++-------------------------------------------------------------------------------------------------------------------------+
+| +---------------------------------------------------------------------------------------------------------------------+ |
+| | JPanel + GridLayout(0,1)                                                                                            | |
+| |                                                                                                                     | |
+| | +--------+--------------------------------------------------------------------------------------------------------+ | |
+| | | JPanel + FlowLayout.LEFT                                                                                        | | |
+| | |                                                                                                                 | | |
+| | +-----------------------------------------------------------------------------------------------------------------+ | |
+| +---------------------------------------------------------------------------------------------------------------------+ |
+| |                                                                                                                     | |
+| | +-------+---------------------------------------------------------------------------------------------------------+ | |
+| | |JPanel + FlowLayout.LEFT                                                                                         | | |
+| | |                                                                                                                 | | |
+| | +-----------------------------------------------------------------------------------------------------------------+ | |
+| |                                                                                                                     | |
+| +---------------------------------------------------------------------------------------------------------------------+ |
++-------------------------------------------------------------------------------------------------------------------------+
+|                                                                                                                         |
+|   JPanel + Tabelle füllt ganzes Grid                                                                                    |
+|                                                                                                                         |
+|                                                                                                                         |
+|                                                                                                                         |
+|                                                                                                                         |
+|                                                                                                                         |
+|                                                                                                                         |
+|                                                                                                                         |
+|                                                                                                                         |
+|                                                                                                                         |
++-------------------------------------------------------------------------------------------------------------------------+
+
+
+
+
+
+MainView (Favoritenansicht):
+
+
+
+ JFrame + GridLayout(1,0)
+
++-------------------------------------------------------------------------------------------------------------------------+
+| +---------------------------------------------------------------------------------------------------------------------+ |
+| |   JPanel + BorderLayout                                     |                                                       | |
+| |                                                 BL.CENTER   |  BL.LINE_END                                          | |
+| | +------------------------------------------+                |                                                       | |
+| | |                                          |                |                                                       | |
+| | |  SuchFeld + FlowLayout.LEFT              |                |                                                       | |
+| | |                                          |                |                                                       | |
+| | +------------------------------------------+                |                                                       | |
+| |                                                             |                                                       | |
+| |                                                             |                                                       | |
+| |                                                             |                                                       | |
+| |                                                             |                                                       | |
+| |                                                             |                                                       | |
+| |                                                             |                                                       | |
+| |                                                             |                                                       | |
+| |                                                             |                                                       | |
+| |                                                             |                                                       | |
+| |                                                             |                                                       | |
+| |                                                             |                                                       | |
+| |                                                             |                                                       | |
+| |                                                             |                                                       | |
+| +---------------------------------------------------------------------------------------------------------------------+ |
++-------------------------------------------------------------------------------------------------------------------------+
+|                                                                                                                         |
+|                                                                                                                         |
+|                                                                                                                         |
+|                                                                                                                         |
+|                                                                                                                         |
+|                                                                                                                         |
+|                                                                                                                         |
+|                                                                                                                         |
+|   JPanel + Tabelle füllt ganzes Grid                                                                                    |
+|                                                                                                                         |
+|                                                                                                                         |
+|                                                                                                                         |
+|                                                                                                                         |
+|                                                                                                                         |
+|                                                                                                                         |
+|                                                                                                                         |
+|                                                                                                                         |
+|                                                                                                                         |
++-------------------------------------------------------------------------------------------------------------------------+
+
+
+
+
+DetailView:
+
+
+
+ JFrame  + BorderLayout
+
++----------------------------------------------------------------------+--------------------------------------------------+
+|                                                                      |                                                  |
+|   BorderLayout.LINE_START                                            |  BorderLayout.LINE_END                           |
+|                                                                      | +----------------------------------------------+ |
+| +------------------------------------------------------------------+ | |                                              | |
+| |                                                                  | | |  JPanel + Default FlowLayout                 | |
+| |   JPanel + GridLayout (0,1)                                      | | |                                              | |
+| |                                                                  | | |                                              | |
+| |                                                                  | | |                                              | |
+| |                                                                  | | |                                              | |
+| |                                                                  | | |                                              | |
+| |                                                                  | | |                                              | |
+| |                                                                  | | |                                              | |
+| |                                                                  | | |                                              | |
+| |                                                                  | | |                                              | |
+| |                                                                  | | |                                              | |
+| |                                                                  | | |                                              | |
+| |                                                                  | | |                                              | |
+| |                                                                  | | |                                              | |
+| |                                                                  | | |                                              | |
+| |                                                                  | | |                                              | |
+| |                                                                  | | |                                              | |
+| |                                                                  | | |                                              | |
+| |                                                                  | | |                                              | |
+| |                                                                  | | |                                              | |
+| |                                                                  | | |                                              | |
+| |                                                                  | | |                                              | |
+| |                                                                  | | |                                              | |
+| |                                                                  | | |                                              | |
+| |                                                                  | | |                                              | |
+| |                                                                  | | |                                              | |
+| |                                                                  | | |                                              | |
+| |                                                                  | | |                                              | |
+| |                                                                  | | |                                              | |
+| |                                                                  | | |                                              | |
+| |                                                                  | | |                                              | |
+| |                                                                  | | |                                              | |
+| |                                                                  | | |                                              | |
+| |                                                                  | | |                                              | |
+| |                                                                  | | |                                              | |
+| |                                                                  | | |                                              | |
+| +------------------------------------------------------------------+ | +----------------------------------------------+ |
++----------------------------------------------------------------------+--------------------------------------------------+
+
+
+
+
+Archtitektur:
+Ich habe für dieses Projekt das MVC Modell gewählt, da dieses übersichtlich ist und dem Projektumfang entspricht.
+Klassen sind entsprechend in Packages sortiert.
+Mein Projekt ist in zwei Hauptpackages unterteilt, lib und src.
+Im src liegt der Sourcecode, im lib müssen sich die Dependencies befinden.
+Ausserdem werden dort die Einstellungen gespeichert.
+
+
+
+      Wird bei Reload neu instanziert
+      +-------------------------+
+      |                         |       Verwaltet Views
+      |                         |
++-----v-----+           +-------+-------+                 +-------------+
+|           |           |               |                 |             |
+|   Main    +---------> |  Controller   +----------------->  Views      |
+|           |           |               |                 |             |
++-----------+           +---------+-----+                 +-------------+
+                                  |
+                                  |
+                                  |   Verwaltet Helpers
+                                  |
+                                  |
+                          +-------+--------+
+                          |                |
+                          |    Helpers     |
+                          |                |
+                          +----------------+
+
+
+
+
+Dependencies:
+Mein Projekt benötigt das folgende Projekt: https://github.com/offensive-security/exploitdb
+Von diesem werden das CSV File "files_exploits.csv" und die Dateien unter /exploits benötigt.
+Das CSV bildet meine Datenbank ab und stellt somit die Grundlage meines Projektes dar. Die Files
+können entsprechend meines Projektes aufgerufen werden.
+
+Desweiteren benötige ich die open-source csvjdbc library: http://csvjdbc.sourceforge.net/.
+Diese ist ein JDBC Treiber, welche mir ermöglicht das CSV File mithilfe von SQL Queries abzufragen.
+
+Ich verwende JAVA 10 als Laufzeitumgebung. 
+Mein Projekt benötigt jedoch mindestens JAVA 8, um lambda funktionalität zu gewährleisten.
+
+Als GUI Library verwende ich JAVAX Swing.
+
+Laufzeit/Sequenz:
+
+Die Main Methode verwaltet den Controller. 
+Dieser hat die Möglichkeit über einen Trigger sich neu zu Instanzieren.
+Dies geschieht durch Überprüfen des States einer Variable.
+
+Die Controller Klasse instanziert die MainView welche Gui Funktionalität bereitstellt.
+Ausserdem werden Helfer Funktionen für das Parsen von Queries, Abfragen von CSV und Speichern von Favoriten instanziert.
+Über die Instanzvariable der MainView Klasse werden auf den Programmfluss einflussnehmende ActionListener zugewiesen.
+Diese können zB. die MainView verändern (Switch zwischen Favoriten/Filtern), Suchfunktionalitäten bieten oder eine neue "Detailview" instanzieren.
+
+Die MainView hat Listener für die Filterfunktionen.
+Diese Speichern die Werte in einem Datenmodel zwischen.
+Anhand dieses Modelles, wird eine semantische Struktur erstellt welche danach verarbeitet werden kann.
+Ausserdem verwaltet die Klasse die Tabelle. 
+
+Bei einem Klick auf den Filter Button wird das Filterelement aus dem Layout entfernt.
+Ausserdem werden die gespeicherten Favoriten ausgegeben.
+Ein zweiter Klick hat zurfolge das der ursprüngliche Stand mit Filterpanel wiederhergestellt wird.
+
+Die Suche nimmt das Query aus dem Suchfeld entgegen und leitet übergibt dieses an eine Instanz der CSV Klasse.
+Diese parst zuerst die Struktur um zwischen Typ/Suchbegriff und Einschliessen/Ausschliessen zu unterscheiden.
+Sollte das Query defekt sein, wird dieses automatisch repariert.
+Anhand dieser Eigenschaften wird dann ein SQL Query erstellt. 
+Dieses wird mithilfe des CSVJDBC Treibers auf das CSV angewandt.
+
+Die Ergebnisse werden anschliessend zurückgenommen.
+Sollten auszuschliessende Werte definiert worden sein, wird eine zweite SQL Abfrage mit diesen Bedingungen erstellt.
+Anschliessend werden die beiden Datensätze miteinander dedupliziert um die Werte auszuschliessen.
+
+Nun wird der Datensatz in der Tabelle aufgezeigt.
+Mit einem Klick auf einen entsprechenden Eintrag wird eine DetailView instanziert.
+Dazu wird anhand der zur Verfügung gestellten ID nach dem entsprechenden Eintrag gesucht und dessen Werte abgebildet.
+
+Die ActionListener der Detailansicht werden im Controller implementiert.
+
+Durch den Favoriten Toggle, kann der Eintrag gespeichert werden um schneller gefunden zu werden.
+Dies bedingt das Reloaden des Controllers.
+
+Ausserdem kann der Link zur Exploit-DB direkt in die Zwischenablage kopiert werden.
+
+Kann eine zugehörige Datei gefunden werden, so ist der Button "Go To Code" aktiv.
+Durch einen Klick auf diesen kann der Code direkt im Notepad aufgerufen werden.
+ 
+Klassendiagram/Aufrufdiagram:
+Ein solches wird mitsammt des Projektes abgegeben.
+
+
+4.) Arbeitsprozess
+
+Wärend des Arbeitens habe ich Agil mit Scrum gearbeitet.
+Ich habe hierzu jeweils die Rolle des Product-Owners als auch des Scrum-Masters übernommen.
+Als Einzelperson habe ich anstelle von Stand-Off Meetings, täglich morgens meinen Backlog überprüft und mit meinem geschätzten Aufwand abgeglichen.
+Ausserdem habe ich die Sprints entsprechend kurz definiert.
+Im ersten Schritt habe ich die User-Stories definiert und im Unterricht die Mockups erstellt.
+Diese habe ich im Unterricht von Nutzern testen lassen.
+Nach positivem Feedback habe ich mit der Architektur begonnen.
+Anschliessend habe ich ein Gui-Grundkonstruckt erstellt.
+Im nächsten Schritt habe ich die Tabelle implementiert und mit Testdaten gefüllt.
+Danach habe ich die CSV-Parsing funktionalität evaluiert und implementiert.
+Diese habe ich mit ActionListenern ins Gui integriert.
+Nun habe ich die FilterFunktion aufgebaut um einem Parser gerecht zu werden.
+Anschliessend habe ich die Favoritenansicht implementiert.
+Danach habe ich die DetailView mit seinen Funktionalitäten implementiert.
+Im letzten Schritt habe ich der Performance und Übersichtlichkeit meinen Code noch ein wenig refactored.
+Diese Schritte konnte ich durch Microsoft DevOps angenehm planen und realisieren.
+
+5.) Fazit/Reflexion
+
+Das grösste Problem bei meiner Implementierung ist die Wahl des GridModelles.
+Da dieses immer gleich grosse Bereiche zur Verfügung stellt ust meine SuchBar entweder zu gross (Gridfüllend) oder besitzt zu viel Freien Raum.
+Beim nächsten mal würde ich hierzu auf das komplexere "GridBagLayout" zurückgreiffen.
+Dies umzubauen wäre Zeitlich jedoch nicht mehr im Rahmen des Projektes gewesen.
+
